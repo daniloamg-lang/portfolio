@@ -36,6 +36,15 @@ type ContactInfo = {
 type ThemeName = 'original' | 'sunsetGlass' | 'storyGradient'
 
 const THEME_STORAGE_KEY = 'portfolio-theme'
+const SKILL_ICON_IDS = [
+  'social-icon',
+  'documentation-icon',
+  'bluesky-icon',
+  'github-icon',
+  'discord-icon',
+  'x-icon',
+  'documentation-icon',
+]
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -152,8 +161,15 @@ function App() {
         <motion.section id="skills" className="section" {...motionPreset}>
           <h2>{t('skills.title')}</h2>
           <ul className="skills-list" aria-label={t('skills.aria')}>
-            {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
+            {skills.map((skill, index) => (
+              <li key={skill}>
+                <span className="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <use href={`/icons.svg#${SKILL_ICON_IDS[index % SKILL_ICON_IDS.length]}`} />
+                  </svg>
+                </span>
+                <span>{skill}</span>
+              </li>
             ))}
           </ul>
         </motion.section>
