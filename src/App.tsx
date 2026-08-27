@@ -33,6 +33,11 @@ type ContactInfo = {
   linkedin: string
 }
 
+type HeroPanelItem = {
+  label: string
+  tags: string[]
+}
+
 type ThemeName = 'original' | 'sunsetGlass' | 'storyGradient'
 
 const THEME_STORAGE_KEY = 'portfolio-theme'
@@ -51,6 +56,7 @@ function App() {
   const reducedMotion = useReducedMotion()
   const [theme] = useState<ThemeName>('storyGradient')
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
+  const [expandedHeroPill, setExpandedHeroPill] = useState<number | null>(null)
 
   const projects =
     (t('projects.items', { returnObjects: true }) as ProjectItem[] | undefined) ?? []
@@ -62,6 +68,13 @@ function App() {
   const languages = t('languages.items', { returnObjects: true }) as LanguageItem[]
   const contactInfo = t('contact.info', { returnObjects: true }) as ContactInfo
   const selectedProject = projects.find((project) => project.id === selectedProjectId) ?? null
+  const panelItems =
+    (t('hero.panelItems', { returnObjects: true }) as HeroPanelItem[] | undefined) ??
+    [
+      { label: t('hero.panelTop'), tags: [] },
+      { label: t('hero.panelMid'), tags: [] },
+      { label: t('hero.panelBottom'), tags: [] },
+    ]
 
   const motionPreset = reducedMotion
     ? {}
@@ -78,6 +91,19 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem(THEME_STORAGE_KEY, theme)
   }, [theme])
+
+  const handleHeroPanelMove = (event: React.MouseEvent<HTMLElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = ((event.clientX - rect.left) / rect.width) * 100
+    const y = ((event.clientY - rect.top) / rect.height) * 100
+    event.currentTarget.style.setProperty('--cursor-x', `${x}%`)
+    event.currentTarget.style.setProperty('--cursor-y', `${y}%`)
+    event.currentTarget.style.setProperty('--cursor-alpha', '1')
+  }
+
+  const handleHeroPanelLeave = (event: React.MouseEvent<HTMLElement>) => {
+    event.currentTarget.style.setProperty('--cursor-alpha', '0')
+  }
 
   return (
     <div className="page-wrap">
@@ -132,10 +158,36 @@ function App() {
             </div>
           </motion.div>
 
-          <motion.aside className="hero-panel" {...motionPreset}>
-            <p>{t('hero.panelTop')}</p>
-            <p>{t('hero.panelMid')}</p>
-            <p>{t('hero.panelBottom')}</p>
+          <motion.aside
+            className="hero-panel"
+            {...motionPreset}
+            onMouseMove={handleHeroPanelMove}
+            onMouseLeave={handleHeroPanelLeave}
+          >
+            <div className="hero-panel-list">
+              {panelItems.map((item, index) => {
+                const isOpen = expandedHeroPill === index
+
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    className={`hero-pill ${isOpen ? 'is-open' : ''}`}
+                    onClick={() => setExpandedHeroPill(isOpen ? null : index)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className="hero-pill-label">{item.label}</span>
+                    <span className="hero-pill-tags" aria-hidden={!isOpen}>
+                      {item.tags.map((tag) => (
+                        <span key={`${item.label}-${tag}`} className="hero-pill-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
           </motion.aside>
         </section>
 

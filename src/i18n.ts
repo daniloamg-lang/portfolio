@@ -28,6 +28,20 @@ const resources = {
         panelTop: 'Product strategy with measurable outcomes.',
         panelMid: 'UX systems built for scale.',
         panelBottom: 'Agile execution with technical alignment.',
+        panelItems: [
+          {
+            label: 'Product strategy with measurable outcomes.',
+            tags: ['Outcome Mapping', 'KPI Trees', 'Roadmap Prioritization'],
+          },
+          {
+            label: 'UX systems built for scale.',
+            tags: ['Design Systems', 'Component Libraries', 'Figma Tokens'],
+          },
+          {
+            label: 'Agile execution with technical alignment.',
+            tags: ['Scrum Cadence', 'Cross-team Rituals', 'QA Alignment'],
+          },
+        ],
       },
       about: {
         title: 'About',
@@ -426,6 +440,20 @@ const resources = {
         panelTop: 'Estrategia de producto con resultados medibles.',
         panelMid: 'Sistemas UX preparados para escalar.',
         panelBottom: 'Ejecución ágil con alineación técnica.',
+        panelItems: [
+          {
+            label: 'Estrategia de producto con resultados medibles.',
+            tags: ['Mapeo de resultados', 'Arboles KPI', 'Priorizacion de roadmap'],
+          },
+          {
+            label: 'Sistemas UX preparados para escalar.',
+            tags: ['Design Systems', 'Librerias de componentes', 'Figma Tokens'],
+          },
+          {
+            label: 'Ejecucion agil con alineacion tecnica.',
+            tags: ['Cadencia Scrum', 'Rituales cross-team', 'Alineacion QA'],
+          },
+        ],
       },
       about: {
         title: 'Sobre mí',
