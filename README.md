@@ -30,7 +30,11 @@ This repository includes [deploy workflow](.github/workflows/deploy.yml) for aut
 
 - Default base is `/`.
 - Override with `VITE_BASE_PATH` if needed.
-- For this user repo (`daniloamg-lang.github.io` style), keep `/`.
+- For this project site, use `/portfolio/`.
+
+## Content update playbook
+
+For a repeatable process to update projects, text, and images, see [docs/content-update-playbook.md](docs/content-update-playbook.md).
 
 ## Security checks
 
