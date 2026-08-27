@@ -36,36 +36,10 @@ type ThemeName = 'original' | 'sunsetGlass' | 'storyGradient'
 
 const THEME_STORAGE_KEY = 'portfolio-theme'
 
-const themeOptions: Array<{ value: ThemeName; labelKey: string }> = [
-  { value: 'original', labelKey: 'theme.options.original' },
-  { value: 'sunsetGlass', labelKey: 'theme.options.sunsetGlass' },
-  { value: 'storyGradient', labelKey: 'theme.options.storyGradient' },
-]
-
-function getInitialTheme(): ThemeName {
-  const fallbackTheme: ThemeName = 'original'
-
-  if (typeof window === 'undefined') {
-    return fallbackTheme
-  }
-
-  const queryTheme = new URLSearchParams(window.location.search).get('theme')
-  if (queryTheme === 'original' || queryTheme === 'sunsetGlass' || queryTheme === 'storyGradient') {
-    return queryTheme
-  }
-
-  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY)
-  if (storedTheme === 'original' || storedTheme === 'sunsetGlass' || storedTheme === 'storyGradient') {
-    return storedTheme
-  }
-
-  return fallbackTheme
-}
-
 function App() {
   const { t, i18n } = useTranslation()
   const reducedMotion = useReducedMotion()
-  const [theme, setTheme] = useState<ThemeName>(() => getInitialTheme())
+  const [theme] = useState<ThemeName>('storyGradient')
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
 
   const projects =
@@ -113,20 +87,6 @@ function App() {
         </nav>
 
         <div className="control-cluster">
-          <label className="theme-switch" aria-label={t('theme.aria')}>
-            <span>{t('theme.label')}</span>
-            <select
-              value={theme}
-              onChange={(event) => setTheme(event.target.value as ThemeName)}
-            >
-              {themeOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {t(option.labelKey)}
-                </option>
-              ))}
-            </select>
-          </label>
-
           <div className="lang-switch" role="group" aria-label={t('lang.aria')}>
             <button
               type="button"

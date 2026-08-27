@@ -17,15 +17,6 @@ const resources = {
       lang: {
         aria: 'Language switcher',
       },
-      theme: {
-        aria: 'Style selector',
-        label: 'Style',
-        options: {
-          original: 'Original Brutalist',
-          sunsetGlass: 'Sunset Glass',
-          storyGradient: 'Story Gradient',
-        },
-      },
       hero: {
         badge: 'Danilo Martínez',
         kicker: 'User Experience Designer / Product Owner',
@@ -422,15 +413,6 @@ const resources = {
       },
       lang: {
         aria: 'Selector de idioma',
-      },
-      theme: {
-        aria: 'Selector de estilo',
-        label: 'Estilo',
-        options: {
-          original: 'Brutalist Original',
-          sunsetGlass: 'Sunset Glass',
-          storyGradient: 'Story Gradient',
-        },
       },
       hero: {
         badge: 'Danilo Martínez',
