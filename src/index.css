@@ -763,6 +763,10 @@ html[data-theme='sunsetGlass'] .case-image-stage {
   padding: 0.85rem;
 }
 
+#experience .timeline-item {
+  background: linear-gradient(160deg, rgba(245, 243, 250, 0.96), rgba(236, 231, 247, 0.96));
+}
+
 .timeline-item h3 {
   margin: 0.42rem 0;
 }
@@ -869,6 +873,11 @@ html[data-theme='storyGradient'] .language-card,
 html[data-theme='storyGradient'] .skills-list li,
 html[data-theme='storyGradient'] .footer {
   border-color: rgba(36, 24, 58, 0.14);
+}
+
+html[data-theme='storyGradient'] #experience .timeline-item {
+  background: linear-gradient(165deg, rgba(244, 240, 251, 0.98), rgba(230, 224, 244, 0.98));
+  box-shadow: 0 10px 22px rgba(53, 37, 92, 0.08);
 }
 
 html[data-theme='storyGradient'] .hero-copy {
