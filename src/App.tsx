@@ -30,6 +30,7 @@ type ContactInfo = {
   email: string
   phone: string
   location: string
+  linkedin: string
 }
 
 type ThemeName = 'original' | 'sunsetGlass' | 'storyGradient'
@@ -209,6 +210,9 @@ function App() {
             </a>
             <a className="mail-link" href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}>
               {contactInfo.phone}
+            </a>
+            <a className="mail-link" href={contactInfo.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
             </a>
             <p className="item-location">{contactInfo.location}</p>
           </div>

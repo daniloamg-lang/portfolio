@@ -392,6 +392,7 @@ const resources = {
           email: 'daniloamgaray@gmail.com',
           phone: '+57 317 515 9089',
           location: 'Bogotá, Colombia',
+          linkedin: 'https://www.linkedin.com/in/danilo-mart%C3%ADnez-garay-438969181/',
         },
       },
       footer: {
@@ -789,6 +790,7 @@ const resources = {
           email: 'daniloamgaray@gmail.com',
           phone: '+57 317 515 9089',
           location: 'Bogotá, Colombia',
+          linkedin: 'https://www.linkedin.com/in/danilo-mart%C3%ADnez-garay-438969181/',
         },
       },
       footer: {
@@ -802,8 +804,8 @@ const savedLanguage = localStorage.getItem('portfolio-language')
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: savedLanguage === 'es' || savedLanguage === 'en' ? savedLanguage : 'en',
-  fallbackLng: 'en',
+  lng: savedLanguage === 'es' || savedLanguage === 'en' ? savedLanguage : 'es',
+  fallbackLng: 'es',
   interpolation: {
     escapeValue: false,
   },
