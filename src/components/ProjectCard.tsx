@@ -18,7 +18,7 @@ export default function ProjectCard({
       <p className="meta">{project.stack}</p>
       <button
         type="button"
-        className="project-cta"
+        className="btn btn-solid project-cta"
         onClick={() => onOpenCaseStudy(project.id)}
       >
         {ctaLabel}

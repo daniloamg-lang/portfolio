@@ -156,7 +156,7 @@ function App() {
               <a href="#projects" className="btn btn-solid">
                 {t('hero.ctaPrimary')}
               </a>
-              <a href="#contact" className="btn btn-outline">
+              <a href="#contact" className="btn btn-solid">
                 {t('hero.ctaSecondary')}
               </a>
             </div>
