@@ -946,19 +946,25 @@ html[data-theme='storyGradient'] .project-grid {
 html[data-theme='storyGradient'] .project-card {
   border-radius: 20px;
   background: linear-gradient(165deg, #fff 0%, #f9f5ff 100%);
+  transition: background 220ms ease, color 220ms ease, box-shadow 220ms ease;
 }
 
-html[data-theme='storyGradient'] .project-card:nth-child(2n) {
+html[data-theme='storyGradient'] .project-card:hover,
+html[data-theme='storyGradient'] .project-card:focus-within {
   background: linear-gradient(165deg, #181127 0%, #25183a 100%);
 }
 
-html[data-theme='storyGradient'] .project-card:nth-child(2n) h3,
-html[data-theme='storyGradient'] .project-card:nth-child(2n) p,
-html[data-theme='storyGradient'] .project-card:nth-child(2n) .meta {
+html[data-theme='storyGradient'] .project-card:hover h3,
+html[data-theme='storyGradient'] .project-card:hover p,
+html[data-theme='storyGradient'] .project-card:hover .meta,
+html[data-theme='storyGradient'] .project-card:focus-within h3,
+html[data-theme='storyGradient'] .project-card:focus-within p,
+html[data-theme='storyGradient'] .project-card:focus-within .meta {
   color: #fff3ff;
 }
 
-html[data-theme='storyGradient'] .project-card:nth-child(2n) .meta {
+html[data-theme='storyGradient'] .project-card:hover .meta,
+html[data-theme='storyGradient'] .project-card:focus-within .meta {
   border-color: rgba(255, 241, 255, 0.45);
 }
 
