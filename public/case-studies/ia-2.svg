@@ -1,0 +1,24 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iaBg" x1="110" y1="70" x2="1080" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F5FF"/>
+      <stop offset="1" stop-color="#E9E2FA"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="30" fill="url(#iaBg)"/>
+  <rect x="95" y="80" width="1010" height="600" rx="24" fill="#FFFFFF" stroke="#2A1F3C" stroke-width="4"/>
+  <circle cx="600" cy="165" r="52" fill="#F08C88" stroke="#2A1F3C" stroke-width="4"/>
+  <rect x="170" y="300" width="220" height="120" rx="16" fill="#FFF4F8" stroke="#2A1F3C" stroke-width="3"/>
+  <rect x="490" y="300" width="220" height="120" rx="16" fill="#F5EFFF" stroke="#2A1F3C" stroke-width="3"/>
+  <rect x="810" y="300" width="220" height="120" rx="16" fill="#EDE9FF" stroke="#2A1F3C" stroke-width="3"/>
+  <rect x="170" y="500" width="220" height="120" rx="16" fill="#FFFFFF" stroke="#2A1F3C" stroke-width="3"/>
+  <rect x="490" y="500" width="220" height="120" rx="16" fill="#FFFFFF" stroke="#2A1F3C" stroke-width="3"/>
+  <rect x="810" y="500" width="220" height="120" rx="16" fill="#FFFFFF" stroke="#2A1F3C" stroke-width="3"/>
+  <path d="M600 217V300" stroke="#2A1F3C" stroke-width="3"/>
+  <path d="M600 300H280" stroke="#2A1F3C" stroke-width="3"/>
+  <path d="M600 300H920" stroke="#2A1F3C" stroke-width="3"/>
+  <path d="M280 420V500" stroke="#2A1F3C" stroke-width="3"/>
+  <path d="M600 420V500" stroke="#2A1F3C" stroke-width="3"/>
+  <path d="M920 420V500" stroke="#2A1F3C" stroke-width="3"/>
+  <text x="145" y="255" fill="#2A1F3C" font-size="30" font-family="Arial, Helvetica, sans-serif" font-weight="700">Information Architecture - Site Map</text>
+</svg>
