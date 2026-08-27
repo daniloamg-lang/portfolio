@@ -133,6 +133,12 @@ body {
   letter-spacing: 0.08em;
 }
 
+.brand-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -190,6 +196,7 @@ body {
   background: var(--paper);
   color: var(--text);
   padding: 0.35rem 0.65rem;
+  min-width: 2.55rem;
   font-weight: 700;
   cursor: pointer;
 }

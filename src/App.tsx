@@ -72,21 +72,11 @@ function App() {
   return (
     <div className="page-wrap">
       <header className="topbar" aria-label={t('nav.aria')}>
-        <a href="#home" className="brand">
-          {t('hero.badge')}
-        </a>
+        <div className="brand-cluster">
+          <a href="#home" className="brand">
+            {t('hero.badge')}
+          </a>
 
-        <nav className="nav-links">
-          <a href="#about">{t('nav.about')}</a>
-          <a href="#projects">{t('nav.projects')}</a>
-          <a href="#skills">{t('nav.skills')}</a>
-          <a href="#experience">{t('nav.experience')}</a>
-          <a href="#education">{t('nav.education')}</a>
-          <a href="#languages">{t('nav.languages')}</a>
-          <a href="#contact">{t('nav.contact')}</a>
-        </nav>
-
-        <div className="control-cluster">
           <div className="lang-switch" role="group" aria-label={t('lang.aria')}>
             <button
               type="button"
@@ -104,6 +94,16 @@ function App() {
             </button>
           </div>
         </div>
+
+        <nav className="nav-links">
+          <a href="#about">{t('nav.about')}</a>
+          <a href="#projects">{t('nav.projects')}</a>
+          <a href="#skills">{t('nav.skills')}</a>
+          <a href="#experience">{t('nav.experience')}</a>
+          <a href="#education">{t('nav.education')}</a>
+          <a href="#languages">{t('nav.languages')}</a>
+          <a href="#contact">{t('nav.contact')}</a>
+        </nav>
       </header>
 
       <main>
